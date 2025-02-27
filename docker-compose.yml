@@ -1,0 +1,13 @@
+services:
+  flutter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tusk_flutter
+    privileged: true
+    volumes:
+      - .:/app
+      - /dev/bus/usb:/dev/bus/usb # Mount USB device
+    network_mode: host
+    stdin_open: true
+    tty: true
